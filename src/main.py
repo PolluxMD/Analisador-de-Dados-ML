@@ -1,10 +1,14 @@
-import pandas as pd
+from data_cleaner import limpar_dados
+from data_loader import carregar_dados
 
-from data_cleaner import clean_data
-from data_analysis import plot_data
-
-# Carregar o arquivo CSV
-df = pd.read_json(r"C:\Users\erica\OneDrive\Semestre 5 2k25 - Análise e Desenvolvimento de Sistemas\MachineLeaning\Analisador_De_Dados\Analisador-de-Dados-ML\data\Students_Grading_Dataset.json")
+# Exemplo de uso no main.py
+if __name__ == "__main__":
+    df = carregar_dados()  # Carrega os dados
+    if df is not None:
+        df_cleaned, total_attendance = limpar_dados(df)  # Limpa os dados
+        print("Dados limpos com sucesso!")
+        print(f"Somatório de 'Attendance (%)': {total_attendance}")
+        print(df_cleaned.head())  # Exibe as 5 primeiras linhas dos dados limpos
 
 # Visualizar as primeiras linhas do dataset
 #print(df.head())

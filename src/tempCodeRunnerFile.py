@@ -1,2 +1,2 @@
 
-plt.title("Matriz de Correlação")
+if __name__ == "__main__":
