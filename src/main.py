@@ -1,3 +1,4 @@
+from logger import validar_nome_usuario, registrar_acao
 from data_loader import carregar_dados
 from data_cleaner import limpar_dados
 from data_analysis import (
@@ -49,27 +50,39 @@ def exibir_menu():
     print("\nMenu:")
     print("1. Escolher uma coluna para análise")
     print("2. Gráfico de Dispersão (Horas de Sono x Nota Final)")
-    print("3. Gráfico de Barras (Idade x Média das Notas Intermediária")
-    print("4. Gráfico de Pizza para as idadess)")
-    print("5. Sair)")
+    print("3. Gráfico de Barras (Idade x Média das Notas Intermediárias)")
+    print("4. Gráfico de Pizza (Distribuição das Idades Agrupadas)")
+    print("5. Sair")
     escolha = input("Escolha uma opção (1, 2, 3, 4 ou 5): ")
     return escolha
 
 if __name__ == "__main__":
+    # Solicita o nome do usuário
+    while True:
+        nome_usuario = input("Digite seu nome: ")
+        if validar_nome_usuario(nome_usuario):
+            registrar_acao(nome_usuario, "Iniciou o sistema")
+            break
+        else:
+            print("Nome inválido. Certifique-se de que tem ao menos 3 caracteres e contém apenas letras.")
+    
     # Carrega os dados
     df = carregar_dados()
     if df is not None:
         # Limpa os dados
         df_cleaned, _ = limpar_dados(df)
+        registrar_acao(nome_usuario, "Carregou e limpou os dados")
         
         print("Bem-vindo ao sistema de análise de dados!\n")
         while True:
             # Exibe o menu de opções
             escolha = exibir_menu()
+            registrar_acao(nome_usuario, f"Escolheu a opção {escolha} no menu")
             
             if escolha == "1":
                 # Solicita a coluna para análise
                 coluna_usuario = input("\nDigite o nome da coluna que deseja analisar: ")
+                registrar_acao(nome_usuario, f"Escolheu analisar a coluna '{coluna_usuario}'")
                 
                 # Valida a coluna escolhida
                 if validar_coluna(df_cleaned, coluna_usuario):
@@ -78,30 +91,31 @@ if __name__ == "__main__":
                     print(f"Mediana: {calcular_mediana(df_cleaned, coluna_usuario):.2f}")
                     print(f"Moda: {calcular_moda(df_cleaned, coluna_usuario)}")
                     print(f"Desvio Padrão: {calcular_desvio_padrao(df_cleaned, coluna_usuario):.2f}")
+                    registrar_acao(nome_usuario, f"Analisou coluna '{coluna_usuario}' com sucesso")
                 else:
                     print("Por favor, tente novamente com uma coluna válida.")
-
+                    registrar_acao(nome_usuario, f"Falhou ao analisar a coluna '{coluna_usuario}'")
+            
             elif escolha == "2":
-                # Exibe o gráfico de dispersão
                 print("\nGerando gráfico de dispersão...")
                 grafico_dispersao(df_cleaned)
-              
-                     
+                registrar_acao(nome_usuario, "Exibiu o gráfico de dispersão")
+            
             elif escolha == "3":
-                # Exibe o gráfico de barras
                 print("\nGerando gráfico de barras para Idade x Média das Notas Intermediárias...")
                 grafico_barras_idade_x_midterm(df_cleaned)
-                
+                registrar_acao(nome_usuario, "Exibiu o gráfico de barras")
             
             elif escolha == "4":
-                # Exibe o gráfico de pizza
                 print("\nGerando gráfico de pizza para distribuição das idades agrupadas...")
                 grafico_pizza_idades(df_cleaned)
+                registrar_acao(nome_usuario, "Exibiu o gráfico de pizza")
             
-
             elif escolha == "5":
+                registrar_acao(nome_usuario, "Encerrou o sistema")
                 print("\nObrigado por utilizar o sistema! Até mais.")
                 break
             
             else:
                 print("Opção inválida. Por favor, escolha 1, 2, 3, 4 ou 5.")
+                registrar_acao(nome_usuario, "Escolheu uma opção inválida no menu")

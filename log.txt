@@ -1,0 +1,11 @@
+[2025-04-06 17:15:54] Erick: Iniciou o sistema
+[2025-04-06 17:15:55] Erick: Carregou e limpou os dados
+[2025-04-06 17:16:00] Erick: Escolheu a opção 1 no menu
+[2025-04-06 17:16:01] Erick: Escolheu analisar a coluna 'Age'
+[2025-04-06 17:16:01] Erick: Analisou coluna 'Age' com sucesso
+[2025-04-06 17:16:05] Erick: Escolheu a opção 5 no menu
+[2025-04-06 17:16:08] Erick: Exibiu o gráfico de pizza
+[2025-04-06 17:18:30] Erick: Iniciou o sistema
+[2025-04-06 17:18:30] Erick: Carregou e limpou os dados
+[2025-04-06 17:18:32] Erick: Escolheu a opção 5 no menu
+[2025-04-06 17:18:32] Erick: Encerrou o sistema
