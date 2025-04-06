@@ -50,3 +50,38 @@
 [2025-04-06 18:10:39] teste: Tentou exibir o gráfico de barras
 [2025-04-06 18:12:58] teste: Escolheu a opção 5 no menu
 [2025-04-06 18:12:58] teste: Encerrou o sistema
+[2025-04-06 18:52:00] teste: Iniciou o sistema
+[2025-04-06 18:52:00] teste: Carregou e limpou os dados
+[2025-04-06 18:52:01] teste: Escolheu a opção 1 no menu
+[2025-04-06 18:52:06] teste: Escolheu analisar a coluna 'Age'
+[2025-04-06 18:52:06] teste: Analisou coluna 'Age' com sucesso
+[2025-04-06 18:52:42] teste: Escolheu a opção 5 no menu
+[2025-04-06 18:52:42] teste: Encerrou o sistema
+[2025-04-06 18:53:13] Lucas: Iniciou o sistema
+[2025-04-06 18:53:13] Lucas: Carregou e limpou os dados
+[2025-04-06 18:53:25] Lucas: Escolheu a opção 4 no menu
+[2025-04-06 18:53:25] Lucas: Tentou exibir o gráfico de pizza
+[2025-04-06 18:53:40] Lucas: Escolheu a opção 2 no menu
+[2025-04-06 18:53:40] Lucas: Tentou exibir o gráfico de dispersão
+[2025-04-06 18:53:51] Lucas: Escolheu a opção 3 no menu
+[2025-04-06 18:53:51] Lucas: Tentou exibir o gráfico de barras
+[2025-04-06 18:54:03] Lucas: Escolheu a opção 1 no menu
+[2025-04-06 18:54:10] Lucas: Escolheu analisar a coluna '2'
+[2025-04-06 18:54:10] Lucas: Falha ao analisar a coluna '2'
+[2025-04-06 18:54:22] Lucas: Escolheu a opção 1 no menu
+[2025-04-06 18:55:57] Lucas: Escolheu analisar a coluna 'Age'
+[2025-04-06 18:55:57] Lucas: Analisou coluna 'Age' com sucesso
+[2025-04-06 18:59:02] Lucas: Escolheu a opção 5 no menu
+[2025-04-06 18:59:02] Lucas: Encerrou o sistema
+[2025-04-06 18:59:06] teste: Iniciou o sistema
+[2025-04-06 18:59:07] teste: Carregou e limpou os dados
+[2025-04-06 18:59:12] teste: Escolheu a opção 1 no menu
+[2025-04-06 18:59:41] teste: Escolheu analisar a coluna 'python -u "c:\Users\erica\OneDrive\Semestre 5 2k25 - Análise e Desenvolvimento de Sistemas\MachineLeaning\Analisador_De_Dados\Analisador-de-Dados-ML\src\main.py"'
+[2025-04-06 18:59:41] teste: Falha ao analisar a coluna 'python -u "c:\Users\erica\OneDrive\Semestre 5 2k25 - Análise e Desenvolvimento de Sistemas\MachineLeaning\Analisador_De_Dados\Analisador-de-Dados-ML\src\main.py"'
+[2025-04-06 18:59:50] teste: Iniciou o sistema
+[2025-04-06 18:59:50] teste: Carregou e limpou os dados
+[2025-04-06 18:59:52] teste: Escolheu a opção 1 no menu
+[2025-04-06 19:00:24] teste: Escolheu analisar a coluna '5'
+[2025-04-06 19:00:24] teste: Falha ao analisar a coluna '5'
+[2025-04-06 19:00:27] teste: Escolheu a opção 5 no menu
+[2025-04-06 19:00:27] teste: Encerrou o sistema

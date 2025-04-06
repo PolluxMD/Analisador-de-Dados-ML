@@ -92,6 +92,11 @@ if __name__ == "__main__":
 
             if escolha == "1":
                 print("Opção 1: Escolhendo uma coluna para análise")
+
+                # Exibe as 5 primeiras linhas do dataset
+                print("\nPreview dos dados:")
+                print(df_cleaned.head())
+                
                 coluna_usuario = input("\nDigite o nome da coluna que deseja analisar: ")
                 registrar_acao(nome_usuario, f"Escolheu analisar a coluna '{coluna_usuario}'")
                 
