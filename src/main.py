@@ -1,27 +1,44 @@
 from data_cleaner import limpar_dados
 from data_loader import carregar_dados
+from data_loader import carregar_dados
+from data_analysis import validar_coluna
 
-# Exemplo de uso no main.py
 if __name__ == "__main__":
     df = carregar_dados()  # Carrega os dados
     if df is not None:
-        df_cleaned, total_attendance = limpar_dados(df)  # Limpa os dados
-        print("Dados limpos com sucesso!")
-        print(f"Somatório de 'Attendance (%)': {total_attendance}")
-        print(df_cleaned.head())  # Exibe as 5 primeiras linhas dos dados limpos
+        coluna_usuario = input("Digite o nome da coluna que deseja analisar: ")
+        
+        if validar_coluna(df, coluna_usuario):
+            print(f"A coluna '{coluna_usuario}' é válida para análise.")
+        else:
+            print("Por favor, tente novamente com uma coluna válida.")
 
-# Visualizar as primeiras linhas do dataset
-#print(df.head())
 
-# Mostrar informações gerais
-#print(df.info())
+import pandas as pd
 
-# Resumo estatístico
-#print(df.describe())
+def limpar_dados(df):
+    """
+    Limpa os dados fornecidos, removendo registros e ajustando valores nulos.
+    
+    - Remove registros onde a coluna "Parent_Education_Level" está vazia.
+    - Preenche valores nulos na coluna "Attendance (%)" com a mediana da própria coluna.
+    - Calcula e retorna o somatório dos valores da coluna "Attendance (%)".
+    
+    Args:
+        df (pd.DataFrame): DataFrame com os dados carregados.
+    
+    Returns:
+        pd.DataFrame: DataFrame limpo.
+        float: Somatório dos valores da coluna "Attendance (%)".
+    """
+    # Remove registros onde a coluna "Parent_Education_Level" está vazia
+    df_cleaned = df.dropna(subset=["Parent_Education_Level"]).copy()  # Garante uma cópia independente
 
-# Conta valores nulos em cada coluna
-#print(df.isnull().sum())
+    # Preenche os valores nulos na coluna "Attendance (%)" com a mediana
+    median_attendance = df_cleaned["Attendance (%)"].median()
+    df_cleaned["Attendance (%)"] = df_cleaned["Attendance (%)"].fillna(median_attendance)
 
-# Conta as duplicatas
-#print(df.duplicated().sum()) 
+    # Calcula o somatório da coluna "Attendance (%)"
+    total_attendance = df_cleaned["Attendance (%)"].sum()
 
+    return df_cleaned, total_attendance

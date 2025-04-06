@@ -20,6 +20,10 @@ def limpar_dados(df):
 
     df_cleaned = df.dropna(subset=["Parent_Education_Level"])
     
+    # Um aviso no log está dizendo que o arquivo pode não estar sendo copiado para o original, fiz uma cópia independente
+
+    df_cleaned = df.dropna(subset=["Parent_Education_Level"]).copy()
+    
     # Preenche os valores nulos da coluna "Attendance" com a mediana
 
     median_attendance = df_cleaned["Attendance (%)"].median()
