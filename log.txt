@@ -9,3 +9,8 @@
 [2025-04-06 17:18:30] Erick: Carregou e limpou os dados
 [2025-04-06 17:18:32] Erick: Escolheu a opção 5 no menu
 [2025-04-06 17:18:32] Erick: Encerrou o sistema
+[2025-04-06 17:38:56] teste: Iniciou o sistema
+[2025-04-06 17:38:56] teste: Carregou e limpou os dados
+[2025-04-06 17:38:58] teste: Escolheu a opção 5 no menu
+[2025-04-06 17:38:58] teste: Encerrou o sistema
+[2025-04-06 17:41:47] teste: Iniciou o sistema
