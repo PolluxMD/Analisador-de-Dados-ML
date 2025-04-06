@@ -1,33 +1,26 @@
 import pandas as pd
 
-def validar_coluna(df, coluna_usuario):
+def validar_coluna(df, coluna):
     """
-    Valida se a coluna informada pelo usuário existe e se é numérica.
-    
+    Valida se a coluna existe no DataFrame e se é numérica.
+
     Args:
-        df (pd.DataFrame): DataFrame contendo os dados.
-        coluna_usuario (str): Nome da coluna fornecida pelo usuário.
-    
+        df (pd.DataFrame): O DataFrame que contém os dados.
+        coluna (str): Nome da coluna a ser validada.
+
     Returns:
-        bool: True se a coluna for válida, False caso contrário.
+        bool: Retorna True se a coluna for válida (existe e é numérica), caso contrário False.
     """
-    # Obtém lista de colunas disponíveis no DataFrame
-    colunas_disponiveis = df.columns.tolist()
-
-    # Verifica se a coluna existe
-    if coluna_usuario not in colunas_disponiveis:
-        print(f"Erro: A coluna '{coluna_usuario}' não existe no dataset.")
-        print(f"Colunas disponíveis: {colunas_disponiveis}")
+    if coluna not in df.columns:
+        print(f"Erro: A coluna '{coluna}' não foi encontrada no dataset.")
         return False
 
-    # Verifica se a coluna é numérica
-    colunas_numericas = df.select_dtypes(include=["number"]).columns.tolist()
-    if coluna_usuario not in colunas_numericas:
-        print(f"Erro: A coluna '{coluna_usuario}' não contém valores numéricos.")
-        print(f"Colunas numéricas disponíveis: {colunas_numericas}")
+    if not pd.api.types.is_numeric_dtype(df[coluna]):
+        print(f"Erro: A coluna '{coluna}' não é numérica. Escolha uma coluna com valores numéricos.")
         return False
 
-    return True  # Se passar nas verificações, retorna True
+    return True
+
 
 def calcular_media(df, coluna):
     """

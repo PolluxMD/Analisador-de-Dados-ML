@@ -14,3 +14,39 @@
 [2025-04-06 17:38:58] teste: Escolheu a opção 5 no menu
 [2025-04-06 17:38:58] teste: Encerrou o sistema
 [2025-04-06 17:41:47] teste: Iniciou o sistema
+[2025-04-06 17:51:24] teste: Iniciou o sistema
+[2025-04-06 17:51:24] teste: Carregou e limpou os dados
+[2025-04-06 17:52:10] teste: Escolheu a opção 1 no menu
+[2025-04-06 17:52:12] teste: Escolheu analisar a coluna 'moda'
+[2025-04-06 17:52:12] teste: Falhou ao analisar a coluna 'moda'
+[2025-04-06 17:52:21] teste: Escolheu a opção 1 no menu
+[2025-04-06 17:52:23] teste: Escolheu analisar a coluna 'Age'
+[2025-04-06 17:52:23] teste: Analisou coluna 'Age' com sucesso
+[2025-04-06 17:52:30] teste: Escolheu a opção 5 no menu
+[2025-04-06 17:52:30] teste: Encerrou o sistema
+[2025-04-06 18:00:51] teste: Iniciou o sistema
+[2025-04-06 18:00:51] teste: Carregou e limpou os dados
+[2025-04-06 18:01:00] teste: Escolheu a opção 2 no menu
+[2025-04-06 18:01:05] teste: Escolheu a opção 2 no menu
+[2025-04-06 18:01:28] teste: Escolheu a opção 3 no menu
+[2025-04-06 18:01:34] teste: Escolheu a opção 1 no menu
+[2025-04-06 18:06:39] teste: Iniciou o sistema
+[2025-04-06 18:06:39] teste: Carregou e limpou os dados
+[2025-04-06 18:06:40] teste: Escolheu a opção 1 no menu
+[2025-04-06 18:06:42] teste: Escolheu a opção 1 no menu
+[2025-04-06 18:06:55] teste: Escolheu a opção 5 no menu
+[2025-04-06 18:08:07] teste: Iniciou o sistema
+[2025-04-06 18:08:07] teste: Carregou e limpou os dados
+[2025-04-06 18:08:09] teste: Escolheu a opção 1 no menu
+[2025-04-06 18:08:12] teste: Escolheu analisar a coluna 'Age'
+[2025-04-06 18:08:12] teste: Analisou coluna 'Age' com sucesso
+[2025-04-06 18:08:14] teste: Escolheu a opção 5 no menu
+[2025-04-06 18:08:14] teste: Encerrou o sistema
+[2025-04-06 18:10:33] teste: Iniciou o sistema
+[2025-04-06 18:10:33] teste: Carregou e limpou os dados
+[2025-04-06 18:10:35] teste: Escolheu a opção 2 no menu
+[2025-04-06 18:10:35] teste: Tentou exibir o gráfico de dispersão
+[2025-04-06 18:10:39] teste: Escolheu a opção 3 no menu
+[2025-04-06 18:10:39] teste: Tentou exibir o gráfico de barras
+[2025-04-06 18:12:58] teste: Escolheu a opção 5 no menu
+[2025-04-06 18:12:58] teste: Encerrou o sistema
