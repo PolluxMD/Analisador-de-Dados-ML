@@ -37,20 +37,68 @@ def limpar_dados(df):
 
     return df_cleaned, total_attendance
 
+def exibir_menu():
+    """
+    Exibe o menu de opções para o usuário.
+    """
+    print("\nMenu:")
+    print("1. Escolher uma coluna para análise")
+    print("2. Sair")
+    escolha = input("Escolha uma opção (1 ou 2): ")
+    return escolha
+
+
+
+from data_loader import carregar_dados
+from data_analysis import (
+    validar_coluna,
+    calcular_media,
+    calcular_mediana,
+    calcular_moda,
+    calcular_desvio_padrao
+)
+
+def exibir_menu():
+    """
+    Exibe o menu de opções para o usuário.
+    """
+    print("\nMenu:")
+    print("1. Escolher uma coluna para análise")
+    print("2. Sair")
+    escolha = input("Escolha uma opção (1 ou 2): ")
+    return escolha
 
 if __name__ == "__main__":
-    df = carregar_dados()  # Carrega os dados
+    # Carrega os dados
+    df = carregar_dados()
     if df is not None:
-        coluna_usuario = input("Digite o nome da coluna que deseja analisar: ")
-        
-        if validar_coluna(df, coluna_usuario):
-            print(f"Análise da coluna '{coluna_usuario}':")
-            print(f"Média: {calcular_media(df, coluna_usuario):.2f}")
-            print(f"Mediana: {calcular_mediana(df, coluna_usuario):.2f}")
-            print(f"Moda: {calcular_moda(df, coluna_usuario)}")
-            print(f"Desvio Padrão: {calcular_desvio_padrao(df, coluna_usuario):.2f}")
-        else:
-            print("Por favor, tente novamente com uma coluna válida.")
+        print("Bem-vindo ao sistema de análise de dados!\n")
+
+        while True:
+            # Exibe o menu de opções
+            escolha = exibir_menu()
+            
+            if escolha == "1":
+                # Solicita a coluna para análise
+                coluna_usuario = input("\nDigite o nome da coluna que deseja analisar: ")
+                
+                # Valida a coluna escolhida
+                if validar_coluna(df, coluna_usuario):
+                    print(f"\nAnalisando a coluna '{coluna_usuario}'...")
+                    print(f"Média: {calcular_media(df, coluna_usuario):.2f}")
+                    print(f"Mediana: {calcular_mediana(df, coluna_usuario):.2f}")
+                    print(f"Moda: {calcular_moda(df, coluna_usuario)}")
+                    print(f"Desvio Padrão: {calcular_desvio_padrao(df, coluna_usuario):.2f}")
+                else:
+                    print("Por favor, tente novamente com uma coluna válida.")
+            
+            elif escolha == "2":
+                print("\nObrigado por utilizar o sistema! Até mais.")
+                break
+            
+            else:
+                print("Opção inválida. Por favor, escolha 1 ou 2.")
+
 
 
 
