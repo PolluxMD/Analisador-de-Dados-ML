@@ -1,18 +1,12 @@
 from data_cleaner import limpar_dados
 from data_loader import carregar_dados
-from data_loader import carregar_dados
-from data_analysis import validar_coluna
-
-if __name__ == "__main__":
-    df = carregar_dados()  # Carrega os dados
-    if df is not None:
-        coluna_usuario = input("Digite o nome da coluna que deseja analisar: ")
-        
-        if validar_coluna(df, coluna_usuario):
-            print(f"A coluna '{coluna_usuario}' é válida para análise.")
-        else:
-            print("Por favor, tente novamente com uma coluna válida.")
-
+from data_analysis import (
+    validar_coluna,
+    calcular_media,
+    calcular_mediana,
+    calcular_moda,
+    calcular_desvio_padrao
+)
 
 import pandas as pd
 
@@ -42,3 +36,23 @@ def limpar_dados(df):
     total_attendance = df_cleaned["Attendance (%)"].sum()
 
     return df_cleaned, total_attendance
+
+
+if __name__ == "__main__":
+    df = carregar_dados()  # Carrega os dados
+    if df is not None:
+        coluna_usuario = input("Digite o nome da coluna que deseja analisar: ")
+        
+        if validar_coluna(df, coluna_usuario):
+            print(f"Análise da coluna '{coluna_usuario}':")
+            print(f"Média: {calcular_media(df, coluna_usuario):.2f}")
+            print(f"Mediana: {calcular_mediana(df, coluna_usuario):.2f}")
+            print(f"Moda: {calcular_moda(df, coluna_usuario)}")
+            print(f"Desvio Padrão: {calcular_desvio_padrao(df, coluna_usuario):.2f}")
+        else:
+            print("Por favor, tente novamente com uma coluna válida.")
+
+
+
+
+
