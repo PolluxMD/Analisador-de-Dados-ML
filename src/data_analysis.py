@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def validar_coluna(df, coluna):
     """
     Valida se a coluna existe no DataFrame e se é numérica.
@@ -35,6 +36,7 @@ def calcular_media(df, coluna):
     """
     return df[coluna].mean()
 
+
 def calcular_mediana(df, coluna):
     """
     Calcula a mediana dos valores na coluna especificada.
@@ -47,6 +49,7 @@ def calcular_mediana(df, coluna):
         float: Mediana dos valores na coluna.
     """
     return df[coluna].median()
+
 
 def calcular_moda(df, coluna):
     """

@@ -85,3 +85,39 @@
 [2025-04-06 19:00:24] teste: Falha ao analisar a coluna '5'
 [2025-04-06 19:00:27] teste: Escolheu a opção 5 no menu
 [2025-04-06 19:00:27] teste: Encerrou o sistema
+[2025-04-07 19:38:47] marcos: Iniciou o sistema
+[2025-04-07 19:38:47] marcos: Carregou e limpou os dados
+[2025-04-07 19:39:11] marcos: Escolheu a opção 4 no menu
+[2025-04-07 19:39:11] marcos: Tentou exibir o gráfico de pizza
+[2025-04-07 19:39:20] marcos: Escolheu a opção 1 no menu
+[2025-04-07 19:39:37] marcos: Escolheu analisar a coluna 'last_name'
+[2025-04-07 19:39:37] marcos: Falha ao analisar a coluna 'last_name'
+[2025-04-07 19:40:06] marcos: Escolheu a opção 1 no menu
+[2025-04-07 19:40:16] marcos: Escolheu analisar a coluna 'Last_Name'
+[2025-04-07 19:40:16] marcos: Falha ao analisar a coluna 'Last_Name'
+[2025-04-07 19:40:25] marcos: Escolheu a opção 1 no menu
+[2025-04-07 19:40:32] marcos: Escolheu analisar a coluna 'Age'
+[2025-04-07 19:40:32] marcos: Analisou coluna 'Age' com sucesso
+[2025-04-07 19:42:51] marcos: Escolheu a opção 5 no menu
+[2025-04-07 19:42:51] marcos: Encerrou o sistema
+[2025-04-07 19:43:08] Fabi: Iniciou o sistema
+[2025-04-07 19:43:08] Fabi: Carregou e limpou os dados
+[2025-04-07 19:43:22] Fabi: Escolheu a opção 2 no menu
+[2025-04-07 19:43:22] Fabi: Tentou exibir o gráfico de dispersão
+[2025-04-07 19:43:53] Fabi: Escolheu a opção 1 no menu
+[2025-04-07 19:44:33] Fabi: Escolheu analisar a coluna 'Age'
+[2025-04-07 19:44:33] Fabi: Analisou coluna 'Age' com sucesso
+[2025-04-07 19:44:48] Fabi: Escolheu a opção 3 no menu
+[2025-04-07 19:44:48] Fabi: Tentou exibir o gráfico de barras
+[2025-04-07 19:45:05] Fabi: Escolheu a opção 5 no menu
+[2025-04-07 19:45:05] Fabi: Encerrou o sistema
+[2025-04-07 19:52:35] vinicius: Iniciou o sistema
+[2025-04-07 19:52:35] vinicius: Carregou e limpou os dados
+[2025-04-07 19:52:47] vinicius: Escolheu a opção 1 no menu
+[2025-04-07 19:53:44] vinicius: Escolheu analisar a coluna 'First_Name'
+[2025-04-07 19:53:44] vinicius: Falha ao analisar a coluna 'First_Name'
+[2025-04-07 19:53:52] vinicius: Escolheu a opção 1 no menu
+[2025-04-07 19:53:59] vinicius: Escolheu analisar a coluna 'Age'
+[2025-04-07 19:53:59] vinicius: Analisou coluna 'Age' com sucesso
+[2025-04-07 19:54:15] vinicius: Escolheu a opção 4 no menu
+[2025-04-07 19:54:15] vinicius: Tentou exibir o gráfico de pizza
