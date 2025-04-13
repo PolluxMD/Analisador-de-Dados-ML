@@ -5,18 +5,27 @@ def limpar_dados(df):
     Limpa os dados fornecidos, removendo registros e ajustando valores nulos.
     
     - Remove registros onde "Parent_Education_Level" está vazia.
-    - Preenche valores nulos em "Attendance (%)" com a mediana.
+    - Preenche valores nulos na coluna "Attendance (%)" com a mediana.
     - Calcula e retorna o somatório dos valores na coluna "Attendance (%)".
-    
+
     Args:
         df (pd.DataFrame): DataFrame com os dados carregados.
     
     Returns:
-        pd.DataFrame: DataFrame limpo.
-        float: Somatório dos valores da coluna "Attendance (%)".
-        float: Média da idade, se disponível.
+        tuple: Uma tupla contendo:
+            - pd.DataFrame: DataFrame limpo.
+            - float: Somatório dos valores da coluna "Attendance (%)".
+
+    Raises:
+        KeyError: Se alguma das colunas necessárias não for encontrada no DataFrame.
+        ValueError: Se a coluna "Attendance (%)" contiver valores não numéricos ou se o DataFrame estiver vazio.
+        Exception: Para quaisquer erros inesperados.
     """
     try:
+        # Verifica se o DataFrame está vazio
+        if df.empty:
+            raise ValueError("O DataFrame fornecido está vazio.")
+
         # Verifica se as colunas necessárias existem
         required_columns = ["Parent_Education_Level", "Attendance (%)"]
         for col in required_columns:
@@ -45,4 +54,4 @@ def limpar_dados(df):
     except Exception as e:
         print(f"Erro inesperado: {e}")
 
-    return None, None, None  # Retorna valores nulos se houver erro
+    return None, None  # Retorna valores nulos se houver erro

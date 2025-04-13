@@ -121,3 +121,10 @@
 [2025-04-07 19:53:59] vinicius: Analisou coluna 'Age' com sucesso
 [2025-04-07 19:54:15] vinicius: Escolheu a opção 4 no menu
 [2025-04-07 19:54:15] vinicius: Tentou exibir o gráfico de pizza
+[2025-04-13 11:27:13] teste: Iniciou o sistema
+[2025-04-13 11:27:14] teste: Carregou e limpou os dados
+[2025-04-13 11:27:16] teste: Escolheu a opção 1 no menu
+[2025-04-13 11:27:19] teste: Escolheu analisar a coluna 'Age'
+[2025-04-13 11:27:19] teste: Analisou coluna 'Age' com sucesso
+[2025-04-13 11:27:27] teste: Escolheu a opção 5 no menu
+[2025-04-13 11:27:27] teste: Encerrou o sistema
