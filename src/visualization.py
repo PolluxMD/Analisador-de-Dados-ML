@@ -66,12 +66,12 @@ def grafico_pizza_idades(df):
         print("Erro: A coluna 'Age' está vazia e não pode gerar o gráfico de pizza.")
         return
 
-    faixas = ["Até 17", "18 a 21", "21 a 24", "25 ou mais"]
+    faixas = ["<17", "18 a 21", "21 a 24", "25>"]
     df["Faixa_Etaria"] = pd.cut(df["Age"], bins=[0, 17, 21, 24, float("inf")], labels=faixas)
 
     proporcoes = df["Faixa_Etaria"].value_counts()
 
     plt.figure(figsize=(8, 8))
-    plt.pie(proporcoes, labels=proporcoes.index, autopct="%1.1f%%", startangle=90, colors=["#FF9999", "#66B3FF", "#99FF99", "#FFCC99"])
+    plt.pie(proporcoes, labels=proporcoes.index, autopct="%1.1f%%", startangle=90, colors=["#FF9999", "#66B3FF", "#99FF99", "#FFCC99"], textprops={'rotation':45})
     plt.title("Distribuição das Idades Agrupadas", fontsize=14)
     plt.show()

@@ -128,3 +128,50 @@
 [2025-04-13 11:27:19] teste: Analisou coluna 'Age' com sucesso
 [2025-04-13 11:27:27] teste: Escolheu a opção 5 no menu
 [2025-04-13 11:27:27] teste: Encerrou o sistema
+[2025-04-13 13:06:36] teste: Iniciou o sistema
+[2025-04-13 13:06:36] teste: Carregou e limpou os dados
+[2025-04-13 13:06:38] teste: Escolheu a opção 1 no menu
+[2025-04-13 13:06:40] teste: Escolheu analisar a coluna 'Age'
+[2025-04-13 13:06:40] teste: Analisou coluna 'Age' com sucesso
+[2025-04-13 13:06:43] teste: Escolheu a opção 2 no menu
+[2025-04-13 13:06:43] teste: Tentou exibir o gráfico de dispersão
+[2025-04-13 13:06:49] teste: Escolheu a opção 3 no menu
+[2025-04-13 13:06:49] teste: Tentou exibir o gráfico de barras
+[2025-04-13 13:06:57] teste: Escolheu a opção 4 no menu
+[2025-04-13 13:06:57] teste: Tentou exibir o gráfico de pizza
+[2025-04-13 13:10:19] teste: Escolheu a opção 5 no menu
+[2025-04-13 13:10:19] teste: Encerrou o sistema
+[2025-04-13 13:10:45] teste: Iniciou o sistema
+[2025-04-13 13:10:45] teste: Carregou e limpou os dados
+[2025-04-13 13:10:46] teste: Escolheu a opção 4 no menu
+[2025-04-13 13:10:46] teste: Tentou exibir o gráfico de pizza
+[2025-04-13 13:11:03] teste: Escolheu a opção 4 no menu
+[2025-04-13 13:11:03] teste: Tentou exibir o gráfico de pizza
+[2025-04-13 13:12:24] teste: Iniciou o sistema
+[2025-04-13 13:12:24] teste: Carregou e limpou os dados
+[2025-04-13 13:12:26] teste: Escolheu a opção 4 no menu
+[2025-04-13 13:12:26] teste: Tentou exibir o gráfico de pizza
+[2025-04-13 13:12:39] teste: Escolheu a opção 1 no menu
+[2025-04-13 13:12:45] teste: Escolheu analisar a coluna 'Age'
+[2025-04-13 13:12:45] teste: Analisou coluna 'Age' com sucesso
+[2025-04-13 13:13:55] teste: Escolheu a opção 5 no menu
+[2025-04-13 13:13:55] teste: Encerrou o sistema
+[2025-04-13 13:14:01] teste: Iniciou o sistema
+[2025-04-13 13:14:01] teste: Carregou e limpou os dados
+[2025-04-13 13:14:03] teste: Escolheu a opção 4 no menu
+[2025-04-13 13:14:03] teste: Tentou exibir o gráfico de pizza
+[2025-04-13 22:55:36] teste: Iniciou o sistema
+[2025-04-13 22:55:36] teste: Carregou e limpou os dados
+[2025-04-13 22:55:40] teste: Escolheu a opção 1 no menu
+[2025-04-13 22:56:49] teste: Escolheu analisar a coluna 'python -u "c:\Users\erica\OneDrive\Semestre 5 2k25 - Análise e Desenvolvimento de Sistemas\MachineLeaning\Analisador_De_Dados\Analisador-de-Dados-ML\src\resume_data.py"'
+[2025-04-13 22:56:49] teste: Falha ao analisar a coluna 'python -u "c:\Users\erica\OneDrive\Semestre 5 2k25 - Análise e Desenvolvimento de Sistemas\MachineLeaning\Analisador_De_Dados\Analisador-de-Dados-ML\src\resume_data.py"'
+[2025-04-13 22:56:52] teste: Escolheu a opção 5 no menu
+[2025-04-13 22:56:52] teste: Encerrou o sistema
+[2025-04-13 22:58:15] teste: Iniciou o sistema
+[2025-04-13 22:58:15] teste: Carregou e limpou os dados
+[2025-04-13 22:59:21] teste: Escolheu a opção 5 no menu
+[2025-04-13 22:59:21] teste: Encerrou o sistema
+[2025-04-13 22:59:32] teste: Iniciou o sistema
+[2025-04-13 22:59:32] teste: Carregou e limpou os dados
+[2025-04-13 23:12:34] teste: Escolheu a opção 5 no menu
+[2025-04-13 23:12:34] teste: Encerrou o sistema

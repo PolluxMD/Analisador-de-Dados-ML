@@ -1,6 +1,7 @@
 from logger import validar_nome_usuario, registrar_acao
 from data_loader import carregar_dados
-from data_cleaner import limpar_dados
+from data_cleaner import limpar_dados  # Importa a função diretamente do módulo
+from resume_data import gerar_resumo_dados
 from data_analysis import (
     validar_coluna,
     calcular_media,
@@ -14,34 +15,9 @@ from visualization import (
     grafico_pizza_idades
 )
 
+
 import pandas as pd
 
-def limpar_dados(df):
-    """
-    Limpa os dados fornecidos, removendo registros e ajustando valores nulos.
-    
-    - Remove registros onde a coluna "Parent_Education_Level" está vazia.
-    - Preenche valores nulos na coluna "Attendance (%)" com a mediana da própria coluna.
-    - Calcula e retorna o somatório dos valores da coluna "Attendance (%)".
-    
-    Args:
-        df (pd.DataFrame): DataFrame com os dados carregados.
-    
-    Returns:
-        pd.DataFrame: DataFrame limpo.
-        float: Somatório dos valores da coluna "Attendance (%)".
-    """
-    # Remove registros onde a coluna "Parent_Education_Level" está vazia
-    df_cleaned = df.dropna(subset=["Parent_Education_Level"]).copy()  # Garante uma cópia independente
-
-    # Preenche os valores nulos na coluna "Attendance (%)" com a mediana
-    median_attendance = df_cleaned["Attendance (%)"].median()
-    df_cleaned["Attendance (%)"] = df_cleaned["Attendance (%)"].fillna(median_attendance)
-
-    # Calcula o somatório da coluna "Attendance (%)"
-    total_attendance = df_cleaned["Attendance (%)"].sum()
-
-    return df_cleaned, total_attendance
 
 def exibir_menu():
     """
@@ -65,6 +41,7 @@ def exibir_menu():
         else:
             print("Opção inválida! Por favor, escolha um número entre 1 e 5.")
 
+
 if __name__ == "__main__":
     # Solicita o nome do usuário
     while True:
@@ -81,6 +58,11 @@ if __name__ == "__main__":
         # Limpa os dados
         df_cleaned, _ = limpar_dados(df)
         registrar_acao(nome_usuario, "Carregou e limpou os dados")
+
+        resumo = gerar_resumo_dados(df_cleaned)
+        print("\nResumo dos Dados Carregados:")
+        for chave, valor in resumo.items():
+            print(f"{chave}: {valor}")
         
         print("Bem-vindo ao sistema de análise de dados!\n")
         
@@ -125,6 +107,7 @@ if __name__ == "__main__":
                 print("\nOpção 4: Gerando gráfico de pizza...")
                 registrar_acao(nome_usuario, "Tentou exibir o gráfico de pizza")
                 grafico_pizza_idades(df_cleaned)
+            
 
             elif escolha == "5":
                 print("\nObrigado por utilizar o sistema! Até mais.")
