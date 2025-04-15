@@ -1,6 +1,6 @@
 from logger import validar_nome_usuario, registrar_acao
-from data_loader import carregar_dados
-from data_cleaner import limpar_dados  # Importa a função diretamente do módulo
+from data_loader import carregar_dados_usuario  # Agora carregamos o arquivo diretamente do usuário
+from data_cleaner import limpar_dados
 from resume_data import gerar_resumo_dados
 from data_analysis import (
     validar_coluna,
@@ -15,9 +15,7 @@ from visualization import (
     grafico_pizza_idades
 )
 
-
 import pandas as pd
-
 
 def exibir_menu():
     """
@@ -41,7 +39,6 @@ def exibir_menu():
         else:
             print("Opção inválida! Por favor, escolha um número entre 1 e 5.")
 
-
 if __name__ == "__main__":
     # Solicita o nome do usuário
     while True:
@@ -52,19 +49,23 @@ if __name__ == "__main__":
         else:
             print("Nome inválido. Certifique-se de que tem ao menos 3 caracteres e contém apenas letras.")
     
-    # Carrega os dados
-    df = carregar_dados()
+    # Carrega os dados do arquivo fornecido pelo usuário ou presente na pasta `data`
+    df = carregar_dados_usuario()
     if df is not None:
         # Limpa os dados
         df_cleaned, _ = limpar_dados(df)
         registrar_acao(nome_usuario, "Carregou e limpou os dados")
 
+        # Mostra um resumo dos dados carregados
         resumo = gerar_resumo_dados(df_cleaned)
         print("\nResumo dos Dados Carregados:")
         for chave, valor in resumo.items():
             print(f"{chave}: {valor}")
-        
-        print("Bem-vindo ao sistema de análise de dados!\n")
+
+        print("\nPreview dos dados:")
+        print(df_cleaned.head())
+
+        print("\nBem-vindo ao sistema de análise de dados!\n")
         
         # Loop do menu principal
         while True:
@@ -74,10 +75,6 @@ if __name__ == "__main__":
 
             if escolha == "1":
                 print("Opção 1: Escolhendo uma coluna para análise")
-
-                # Exibe as 5 primeiras linhas do dataset
-                print("\nPreview dos dados:")
-                print(df_cleaned.head())
                 
                 coluna_usuario = input("\nDigite o nome da coluna que deseja analisar: ")
                 registrar_acao(nome_usuario, f"Escolheu analisar a coluna '{coluna_usuario}'")
@@ -107,7 +104,6 @@ if __name__ == "__main__":
                 print("\nOpção 4: Gerando gráfico de pizza...")
                 registrar_acao(nome_usuario, "Tentou exibir o gráfico de pizza")
                 grafico_pizza_idades(df_cleaned)
-            
 
             elif escolha == "5":
                 print("\nObrigado por utilizar o sistema! Até mais.")

@@ -1,41 +1,60 @@
-import pandas as pd
 import os
+import pandas as pd
 
-def carregar_dados():
+def carregar_dados_usuario():
     """
-    Carrega o arquivo JSON com dados do dataset de alunos.
-    Retorna um DataFrame do Pandas, garantindo que o arquivo está na pasta 'data'.
+    Permite que o usuário carregue um arquivo CSV ou JSON na pasta 'data' do projeto ou forneça um caminho manual.
+    Agora com tratamento aprimorado para entradas inválidas.
     
     Returns:
-        pd.DataFrame | None: Retorna o DataFrame se os dados forem carregados corretamente, ou None em caso de erro.
+        pd.DataFrame | None: Retorna um DataFrame com os dados carregados, ou None caso o arquivo seja inválido.
     """
-    # Define o caminho do arquivo relativo à pasta 'data'
-    file_path = os.path.join(os.getcwd(), "data", "Students_Grading_Dataset.json")
+    data_path = os.path.join(os.getcwd(), "data")  # Define o caminho absoluto da pasta 'data'
+    
+    # Verifica se há arquivos disponíveis na pasta 'data'
+    arquivos_disponiveis = [f for f in os.listdir(data_path) if f.endswith(".csv") or f.endswith(".json")]
 
-    # Verifica se o arquivo existe
-    if not os.path.exists(file_path):
-        print(f"Erro: O arquivo '{file_path}' não foi encontrado. Certifique-se de que está na pasta 'data'.")
+    caminho = None
+    
+    if arquivos_disponiveis:
+        print("\nArquivos disponíveis na pasta 'data':")
+        for idx, arquivo in enumerate(arquivos_disponiveis, start=1):
+            print(f"{idx}. {arquivo}")
+
+        escolha = input("Escolha um arquivo (digite o número correspondente) ou pressione ENTER para fornecer outro caminho: ")
+
+        if escolha.isdigit() and 1 <= int(escolha) <= len(arquivos_disponiveis):
+            arquivo_escolhido = arquivos_disponiveis[int(escolha) - 1]
+            caminho = os.path.join(data_path, arquivo_escolhido)
+        elif escolha.strip():  # Se o usuário digitou algo diferente de vazio
+            caminho = escolha.strip()
+
+    # Caso não tenha arquivos na pasta `data` ou o usuário queira fornecer outro caminho
+    if caminho is None:
+        caminho = input("Informe o caminho completo do arquivo CSV ou JSON: ").strip()
+
+    # **Verificação adicional para evitar entradas inválidas**
+    if not caminho or caminho.lower() == "c://null":
+        print("Erro: Caminho do arquivo inválido! Certifique-se de inserir um caminho correto.")
+        return None
+
+    if not os.path.exists(caminho):
+        print("Erro: O arquivo não foi encontrado! Verifique o caminho e tente novamente.")
         return None
 
     try:
-        # Carrega os dados do JSON
-        df = pd.read_json(file_path)
-
-        # Verifica se o arquivo não está vazio
-        if df.empty:
-            print("Erro: O arquivo JSON está vazio. Certifique-se de que contém dados antes de prosseguir.")
-            return None
-
-        print("Dados carregados com sucesso!")
-        return df
-
-    except ValueError:
-        print("Erro: O arquivo JSON não pôde ser lido. Verifique se está formatado corretamente.")
-        return None
+        if caminho.endswith(".csv"):
+            df = pd.read_csv(caminho)
+            print(f"Arquivo CSV '{os.path.basename(caminho)}' carregado com sucesso!")
+            return df
+        elif caminho.endswith(".json"):
+            df = pd.read_json(caminho)
+            print(f"Arquivo JSON '{os.path.basename(caminho)}' carregado com sucesso!")
+            return df
+        else:
+            print("Erro: O arquivo informado não é CSV ou JSON. Tente novamente.")
     except Exception as e:
-        print(f"Erro inesperado ao carregar os dados: {e}")
-        return None
+        print(f"Erro ao carregar o arquivo: {e}")
+        print("Certifique-se de que o caminho e o formato do arquivo estão corretos.")
 
-# Exemplo de uso
-if __name__ == "__main__":
-    dados = carregar_dados()
+    return None
